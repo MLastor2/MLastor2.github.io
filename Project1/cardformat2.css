@@ -1,0 +1,41 @@
+@charset "utf-8";
+
+/*
+   New Perspectives on HTML5 and CSS3, 8th Edition
+   Tutorial 7
+   Coding Challenge 3
+   
+   Author: Marissa Lastoria
+   Date: 11/10/2023
+   Filename: code7-3_valid.css
+
+*/
+
+}
+input:required {
+  background-color: green;
+}
+input:invalid:focus {
+  border-color: red;
+}
+input:focus {
+  background-color: white;
+}
+
+
+
+}
+
+@keyframes spin {
+   0% {
+       transform: rotate(0deg);
+   }
+   100% {
+       transform: rotate(360deg);
+   }
+}
+div{
+  color:black;
+  font-size:20px;
+  text-align:center;
+}

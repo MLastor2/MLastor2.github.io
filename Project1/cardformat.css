@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+/*
+   New Perspectives on HTML5 and CSS3, 8th Edition
+   Tutorial 7
+   Coding Challenge 3
+   
+   Filename: code7-3_forms.css
+
+*/
+
+h1 {
+   font-family: 'Times New Roman', serif;
+   font-size: 1.7em;
+   letter-spacing: 0.1em;
+   margin-left: 20px;
+}
+
+body {
+  font-family: 'Times New Roman', serif;
+}
+
+select#ccard {
+   display: block;
+   font-size: 0.9em;
+   margin: 0px 0px 10px 0px;
+}
+
+
+select[name='cardmonth'] {
+   display: inline-block;
+   margin-right: 10px;
+}
+
+label[for='csc'] {
+   display: inline-blcok;
+   margin-top: 15px;
+}
+
+input#csc {
+   display: inline-block;
+   width: 50px;
+   font-family: 'Times New Roman', serif;
+}
+
+input[type="submit"] {
+   font-size: 1.2em;
+   display: block;
+   margin: 10px auto
+   font-family: 'Times New Roman', serif;
+}
+input[type="reset"] {
+   font-size: 1.2em;
+   display: block;
+   margin: 10px auto
+   font-family: 'Times New Roman', serif;
+}
+
+

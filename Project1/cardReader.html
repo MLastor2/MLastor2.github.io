@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+   <meta charset="utf-8">
+   <title>Order Site</title>
+   <link rel="stylesheet" href="cardformat.css">
+   <link rel="stylesheet" href="cardformat2.css">
+   <link href="styles.css" rel = "stylesheet"><!--linking css-->
+   <link href="styles2.css" rel = "stylesheet">
+   <script type="text/javascript" src="javascriptpart.js" defer></script>
+   <script src="formsubmit.js"></script>
+</head>
+<body>
+<h1>Order Site</h1>
+      <form action="submit-survey.php">
+      <ol type="1">
+         <li>
+            One 16oz Jar of honey- $10
+            <ol type="a">
+                <li>
+               <input type="radio" id="Very Satisfied" name="sat_level" value="Very Satisfied">
+                <label for="html">Yes</label><br>
+                  </li>
+                  <li>
+                  <input type="radio" id="Satisfied" name="sat_level" value="Satisfied">
+               <label for="html">No</label><br>
+                  </li>
+                  
+            </ol>
+         </li>
+         <li>
+            One Pint of Berries - $3 each
+            <ol type="a">
+               <li>
+               <input type="radio" id="Very Satisfied" name="sat_level" value="Very Satisfied"><!--input type: radio-->
+                <label for="html">Blackberries</label><br>
+                  </li>
+                  <li>
+                  <input type="radio" id="Satisfied" name="sat_level" value="Satisfied">
+               <label for="html">Blueberries</label><br>
+                  </li>
+                  <li>
+                 <input type="radio" id="Dissatisfied" name="sat_level" value="Dissatisfied">
+                 <label for="html">Both</label><br>
+                  </li>
+                  <li>
+                  <input type="radio" id="Very Dissatisfied" name="sat_level" value="Very Dissatisfied">    
+                  <label for="html">Neither</label><br>          
+                  </li>        
+            </ol>
+         </li>
+         <li>
+            How likely are you to visit Fourelles again?<!--input type: range slider-->
+            <div id="newRow">
+              <label for="volume">very unlikey</label>
+                 <input type="range"  id="cowbell" name="cowbell" min="0" max="10" value="5" step="1" />
+                 <label for="volume">very likely</label>
+  
+            </div>
+         </li> 
+         <li>
+           Provide any suggestions for the farm:<!--input type: text-->
+            
+            <label for="q5text"></label>
+            <textarea id="q5text" name="q5" rows="2" cols="40"></textarea><!--Create and format a text area-->
+         </li> 
+		 
+      </ol>
+    </form>
+   <h1>Payment Information</h1><!--Create and format a form with multiple field sets-->
+   <form action="process-card.php" method="post">
+      <fieldset>
+         <select id = ccard name="creditcard" required>><!--Create a selection list-->
+            <option value="amex">American Express</option>
+            <option value="disc">Discover</option>
+            <option value="master">MasterCard</option>
+            <option value="visa">Visa</option>
+         </select>
+          
+         <label for="cname">Name</label> 
+         <input id="cname" name="cardname" type="text" required/>
+		 <label for="phone">Phone</label> 
+         <input id = "phone" type="text" pattern="[789][0-9]{9}" inputmode="numeric"required /><!--Include at least one input that is set for a mobile keyboard type-->
+         <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+<label for="vehicle1">Would you like to recive text updates?</label><br><!--input type: check boxes-->
+         <label for="cnum">Card Number</label>
+         <input type="text" name="cardnumber" id="cnum" pattern="^(?:4[0-9]{12}(?:[0-9]{3})?|[25][1-7][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$" required />
+<!--Validate data with patterns and field lengths-->
+         <select name="cardmonth" id="month" >
+		   <datalist id="month">
+            <option value="month"></option>
+            <option value="01">January(01)</option>
+            <option value="02">Febuary(02)</option>
+            <option value="03">March(03)</option>
+            <option value="04">April(04)</option>  
+            <option value="05">May(05)</option>
+            <option value="06">June(06)</option>
+            <option value="07">July(07)</option>
+            <option value="08">August08)</option>
+            <option value="09">September(09)</option>
+            <option value="10">October(10)</option>
+            <option value="11">November(11)</option>
+            <option value="12">December(12)</option>   
+		   </datalist>
+         </select>  <!--input type: datalists-->
+         
+         <select name="cardyear" id="year"> 
+           <option value="year"></option>
+           <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>       
+         </select>
+         
+         <label for="csc">CSC</label>
+         <input type="text" id="csc" name="cardcsc" maxlength="3" pattern="^\d{3}$"required /><!--Validate data with by having certain fields required-->
+		<label for="meeting-time">Choose day for pick up:</label>
+
+		<input
+			type="datetime-local"
+			id="meeting-time"
+			name="meeting-time"
+			value="2023-12-04T19:30"
+			min="2023-12-07T00:00"
+			max="2023-12-31T00:00" />
+
+		<button type="submit" class="sbtn btn btn-secondary btn-c" 
+onclick="spinner()" >Submit</button><!--input type: spinners-->
+		 <!--Create a submit and cancel/reset button-->
+		 <input type="reset" value="Reset" />
+      </fieldset>
+   </form>
+   <div>Time left = <span id="timer"></span></div>
+   
+
+</body>
+</html>
